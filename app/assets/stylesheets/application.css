@@ -13,3 +13,150 @@
  *= require_tree .
  *= require_self
  */
+
+ .cek {
+    border: 1px solid;
+ }
+
+ /* bootstrap hack ===================================================================================================== */
+
+ .container {
+   max-width: unset !important;
+   margin-top: 3rem;
+ }
+
+ /* bootstrap hack ===================================================================================================== */
+
+
+ /* dark Mode ========================================================================================================== */
+
+ .dark {
+   background-color: #010110 !important;
+ }
+
+ .container-dark {
+   background-color: #010110 !important;
+ }
+
+ .dark-shadow {
+   box-shadow: 0 0.5rem 1rem rgb(199 199 199 / 15%) !important;
+ }
+
+ .font-dark {
+   color: whitesmoke;
+ }
+
+ .inner-dark{
+   background-color: whitesmoke !important;
+ }
+
+ /* dark Mode ========================================================================================================== */
+
+ /* define stylesheet ================================================================================================== */
+ 
+* {
+   box-sizing: border-box;
+}
+
+.bg-smoke {
+    background-color: whitesmoke;
+}
+
+.notice {
+   position: fixed;
+   z-index: 100;
+   top: 4rem;
+}
+
+.bg-notice {
+   background-color: aquamarine;
+}
+
+.p-relative {
+   position: relative;
+}
+
+.p-absolute {
+   position: absolute;
+}
+
+.p-fixed {
+   position: fixed;
+}
+
+.btn-span {
+   cursor: pointer;
+}
+
+.close {
+   right: 1rem;
+   top: 1rem;
+   z-index: 100;
+}
+
+.form-card {
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: .5rem;
+}
+
+.me-shadow {
+   box-shadow: 0 0 10px 1px rgb(0 0 0 / 30%);
+}
+
+.to-media {
+   padding-top: 1.5rem !important;
+   height: max-content !important;
+}
+
+.to-show {
+   transform: scaleY(1) !important;
+}
+
+
+/* define stylesheet ================================================================================================== */
+
+/* application style ================================================================================================== */
+
+.media-mobile {
+   top: 2.5rem;
+   left: 0;
+   height: 0;
+   transition: 1s ease;
+   z-index: 200;
+}
+
+.media-mobile a,
+.media-mobile span {
+   display: block;
+   transform: scaleY(0);
+}
+
+.mode {
+   position: fixed;
+   right: 4rem;
+   bottom: 4rem;
+   z-index: 100;
+}
+
+.mode .btn-span {
+   top: 0;
+   left: 0;
+}
+
+@media (max-width: 576px) {
+   #nav-link {
+      display: none !important;
+   }
+
+   #svg {
+      display: block !important;
+   }
+
+   .form-card {
+      width: 80% !important;
+   }
+}
+
+/* application style ================================================================================================== */

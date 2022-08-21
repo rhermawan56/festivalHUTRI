@@ -1,0 +1,8 @@
+.top-container {
+    z-index: 10000;
+    height: 100vh;
+}
+
+.top-inner {
+    height: 100%;
+}
