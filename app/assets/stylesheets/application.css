@@ -89,9 +89,15 @@
 }
 
 .close {
-   right: 1rem;
-   top: 1rem;
+   right: 1.5rem;
+   top: 1.5rem;
    z-index: 100;
+   border-radius: .5rem;
+   background-color: transparent;
+}
+
+.close:hover {
+   background-color: rgb(161, 26, 26);
 }
 
 .form-card {
@@ -114,6 +120,17 @@
    transform: scaleY(1) !important;
 }
 
+.font-white {
+   color: white;
+}
+
+.pop-bold {
+   font-family: 'poppins_bold';
+}
+
+.pop {
+   font-family: 'poppins';
+}
 
 /* define stylesheet ================================================================================================== */
 

@@ -1,8 +1,27 @@
 .top-container {
     z-index: 10000;
     height: 100vh;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
 }
 
 .top-inner {
-    height: 100%;
+    border-radius: .5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: top ease 2s;
+}
+.top-inner p {
+    line-height: 2;
+}
+
+@keyframes top {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
