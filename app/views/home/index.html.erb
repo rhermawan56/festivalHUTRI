@@ -6,8 +6,9 @@
         <div class="content p-3 my-2">
         <% if @current_user %>
             <img src="<%= "/content_images/#{@current_user.id}.jpg" %>" alt="" class="content-img">
-        <% end %>
+        <% else %>
             <img src="<%= "/content_images/1.jpg" %>" alt="" class="content-img">
+        <% end %>
         </div>
         <div class="content p-3 my-2">
             <p class="pop h6 mb-0">tes content</p>
