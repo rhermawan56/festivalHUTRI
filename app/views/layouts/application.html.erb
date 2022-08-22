@@ -16,6 +16,80 @@
 
   <body>
 
+  <header>
+      <div class="p-relative cek">
+        <nav class="navbar bg-smoke shadow fixed-top px-3 py-0<%=session[:shadow]%>">
+          <div class="d-flex justify-content-between w-100">
+            <div class="align-self-center">
+              <a class="navbar-brand mb-0 h1">Navbar</a>
+            </div>
+
+            <div id="nav-link" class="d-flex no-wrap">
+              <% if @current_user != nil %>
+                <span class="align-self-center h6 m-0"><%= @current_user.name %></span>
+              <% end %>
+                <a href="/home" class="py-3 px-2">Home</a>
+              <% if @current_user == nil %>
+                <a href="/login" class="py-3 px-2">Login</a>
+                <a href="/signup" class="py-3 px-2">Signup</a>
+              <% else %>
+                <a href="#" class="py-3 px-2">Post</a>
+                <a href="/logout" data-method="post" class="py-3 px-2">Logout</a>             
+              <% end %>
+            </div>
+
+            <span id="svg" class="btn-span align-self-center p-3" style="display:none">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24"><path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path></svg>
+            </span>
+          </div>
+        </nav>
+        
+        <div class="media-mobile w-100 p-absolute bg-smoke shadow">
+          <% if @current_user != nil %>
+            <span class="align-self-center h6 m-0 px-2 pt-3"><%= @current_user.name %></span>
+          <% end %>
+          <a href="/home" class="p-2">Home</a>
+          <% if @current_user == nil %>
+          <a href="/login" class="p-2">Login</a>
+          <a href="/signup" class="p-2">Signup</a>
+          <% else %>
+          <a href="#" class="p-2">Post</a>
+          <a href="/logout" class="p-2">Logout</a>
+          <% end %>
+        </div>
+      </div>
+    </header>
+
+    <%# notice ================================================================================================ %>
+    <div class="notice w-100 text-center bg-notice">
+      <% if flash[:notice] %>
+        <p class="p-2 m-0"><%= flash[:notice] %></p>
+      <% end %>
+    </div>
+
+    <%# mode =================================================================================================== %>
+    <% if @current_user != nil %>
+        <div class="mode">
+      <% if session[:body] == "dark" %>
+          <span id="light" class="p-absolute p-2">
+          <%= link_to("/assets/light") do %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
+              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+            </svg>
+          <% end %>
+          </span>
+      <% else %>
+          <span id="dark" class="p-absolute bg-smoke p-2">
+          <%= link_to("/assets/dark") do %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-brightness-low" viewBox="0 0 16 16">
+              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm.5-9.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+            </svg>
+          <% end %>
+          </span>
+      <% end %>
+        </div>
+    <% end %>
+    <%# mode =================================================================================================== %>
 
     <%= yield %>
 

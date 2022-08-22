@@ -1,0 +1,15 @@
+<div class="container m-0 login-container">
+    <div class="form-card p-fixed w-50 p-5 me-shadow">
+        <%= form_tag("/login") do %>
+            <div class="mb-3">
+                <label for="email" class="form-label">Alamat Email</label>
+                <input name="email" type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        <% end %>
+    </div>
+</div>
