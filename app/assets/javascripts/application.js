@@ -3,5 +3,7 @@ $('#top-close').click(function () {
 })
 
 $(function () {
-    console.log('ok')
+    setTimeout(function () {
+        $('.notice p').hide()
+    }, 2000)
 })

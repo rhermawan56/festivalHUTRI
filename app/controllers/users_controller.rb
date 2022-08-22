@@ -1,4 +1,29 @@
 class UsersController < ApplicationController
+
+    def signup
+        @users = User.new
+    end
+
+    def create
+        @users = User.new(
+            name: params[:name],
+            email: params[:email],
+            address: params[:address],
+            password: params[:password]
+        )
+
+        if params[:password] != params[:cekpassword]
+            flash[:notice] = "password tidak sesuai"
+            render("users/signup")
+        elsif @users.save
+            flash[:notice] = "Berhasil membuat akun"
+            redirect_to("/login")
+        else
+            flash[:notice] = "Gagal membuat akun kolom tidak boleh kosong"
+            render("users/signup")
+        end
+    end
+
     def login_form
         
     end

@@ -1,0 +1,27 @@
+<div class="container m-0 login-container cek">
+    <div class="form-card p-fixed w-50 p-3">
+        <%= form_tag("/create") do %>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input name="name" type="text" class="form-control" id="name" value="<%= @users.name %>">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Alamat Email</label>
+                <input name="email" type="email" class="form-control" id="email" value="<%= @users.email %>">
+            </div>
+            <div class="mb-3">
+                <label for="domisili" class="form-label">Alamat Domisili</label>
+                <input name="address" type="text" class="form-control" id="domisili" value="<%= @users.address %>">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" id="password" value="<%= @users.password %>">
+            </div>
+            <div class="mb-3">
+                <label for="cekpassword" class="form-label">Ulangi Password</label>
+                <input name="cekpassword" type="password" class="form-control" id="cekpassword">
+            </div>
+            <button type="submit" class="btn btn-primary">Signup</button>
+        <% end %>
+    </div>
+</div>
