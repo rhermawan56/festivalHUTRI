@@ -4,7 +4,10 @@
     <div class="inner-contain d-flex justify-content-between p-relative my-3 shadow <%= "#{session[:shadow]} #{session[:inner]}" %>">
         <div class="user p-absolute shadow <%= session[:shadow] %>" style="background-image:url('<%="/m-images/images.jpg"%>')"></div>
         <div class="content p-3 my-2">
+        <% if @current_user %>
             <img src="<%= "/content_images/#{@current_user.id}.jpg" %>" alt="" class="content-img">
+        <% end %>
+            <img src="<%= "/content_images/1.jpg" %>" alt="" class="content-img">
         </div>
         <div class="content p-3 my-2">
             <p class="pop h6 mb-0">tes content</p>
