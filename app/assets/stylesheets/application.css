@@ -14,43 +14,49 @@
  *= require_self
  */
 
- .cek {
-    border: 1px solid;
- }
+.cek {
+   border: 1px solid;
+}
 
- /* bootstrap hack ===================================================================================================== */
+* {
+   box-sizing: border-box;
+}
 
- .container {
-   max-width: unset !important;
+/* bootstrap hack ===================================================================================================== */
+
+.container {
+   max-width: 100% !important;
+   width: 100% !important;
    margin-top: 3rem;
- }
+   overflow-x: hidden;
+}
 
- /* bootstrap hack ===================================================================================================== */
+/* bootstrap hack ===================================================================================================== */
 
 
- /* dark Mode ========================================================================================================== */
+/* dark Mode ========================================================================================================== */
 
- .dark {
+.dark {
    background-color: #010110 !important;
- }
+}
 
- .container-dark {
+.container-dark {
    background-color: #010110 !important;
- }
+}
 
- .dark-shadow {
+.dark-shadow {
    box-shadow: 0 0.5rem 1rem rgb(199 199 199 / 15%) !important;
- }
+}
 
- .font-dark {
+.font-dark {
    color: whitesmoke;
- }
+}
 
- .inner-dark{
+.inner-dark {
    background-color: whitesmoke !important;
- }
+}
 
- .bgr-dark {
+.bgr-dark {
    position: fixed;
    top: 0;
    left: 0;
@@ -60,18 +66,17 @@
    background-position: center !important;
    background-repeat: no-repeat !important;
    background-size: cover !important;
- }
-
- /* dark Mode ========================================================================================================== */
-
- /* define stylesheet ================================================================================================== */
- 
-* {
-   box-sizing: border-box;
+   overflow-y: scroll;
+   padding-bottom: 1.5rem;
 }
 
+/* dark Mode ========================================================================================================== */
+
+/* define stylesheet ================================================================================================== */
+
+
 .bg-smoke {
-    background-color: whitesmoke;
+   background-color: whitesmoke;
 }
 
 .notice {
