@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
     def login
         @users = User.find_by(email: params[:email])
-        if @users
+        if @users && @users.authenticate(params[:password])
             flash[:notice] = "Anda berhasil login"
             session[:user_id] = @users.id
             redirect_to("/home")
