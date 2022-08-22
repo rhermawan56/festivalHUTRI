@@ -42,7 +42,13 @@ class UsersController < ApplicationController
 
     def logout
         session[:user_id] = nil
-        flash[:notice] = "Anda berhasil logout"
+        session[:body] = @assets.cs_aset
+        session[:container] = nil
+        session[:shadow] = nil
+        session[:font] = nil
+        session[:inner] = nil
+        session[:bg] = nil
+        flash[:notice] = nil
         redirect_to("/home")
     end
 end
