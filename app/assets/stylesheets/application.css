@@ -22,6 +22,11 @@
    box-sizing: border-box;
 }
 
+a {
+   text-decoration: unset !important;
+   color: black;
+}
+
 /* bootstrap hack ===================================================================================================== */
 
 .container {
@@ -53,7 +58,7 @@
 }
 
 .inner-dark {
-   background-color: whitesmoke !important;
+   background-color: rgb(245 245 245 / 50%) !important;
 }
 
 .bgr-dark {

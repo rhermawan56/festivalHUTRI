@@ -33,6 +33,11 @@
     transform: translateX(-50%);
 }
 
+.content-update {
+    bottom: 1rem;
+    right: 3rem;
+}
+
 @media (max-width: 768px) {
     .inner-contain {
         flex-wrap: wrap;

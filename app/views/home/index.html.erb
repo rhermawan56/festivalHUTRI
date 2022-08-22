@@ -1,17 +1,20 @@
 <div class="container <%= session[:bg] %> py-4 px-5">
     <h5 class="title m-0 mt-3 <%=session[:font]%>">Dokumentasi Festival HUT RI<%= session[:user_id] %></h5>
     <hr>
-    <div class="inner-contain d-flex justify-content-between p-relative my-3 shadow <%= "#{session[:shadow]} #{session[:inner]}" %>">
-        <div class="user p-absolute shadow <%= session[:shadow] %>" style="background-image:url('<%="/m-images/images.jpg"%>')"></div>
-        <div class="content p-3 my-2">
-        <% if @current_user %>
-            <img src="<%= "/content_images/#{@current_user.id}.jpg" %>" alt="" class="content-img">
-        <% else %>
-            <img src="<%= "/content_images/1.jpg" %>" alt="" class="content-img">
-        <% end %>
+
+    <% @posts.each do | post | %>
+        <div class="inner-contain d-flex justify-content-between p-relative my-3 shadow <%= "#{session[:shadow]} #{session[:inner]}" %>">
+            <div class="user p-absolute shadow <%= session[:shadow] %>" style="background-image:url('<%="/m-images/images.jpg"%>')"></div>
+            <div class="content p-3 my-2">
+                <img src="<%= "/content_images/#{post.user_images}"%> " alt="<%= post.user_images %> " class="content-img">
+            </div>
+            <div class="content p-3 my-2">
+                <p class="pop h6 mb-0"><%= post.content %></p>
+            </div>
+            <div class="content-update p-absolute d-flex">
+                <a href="#" class="p-2">Edit</a>
+                <a href="#" class="p-2">Delete</a>
+            </div>
         </div>
-        <div class="content p-3 my-2">
-            <p class="pop h6 mb-0">tes content</p>
-        </div>
-    </div>
+    <% end %>
 </div>

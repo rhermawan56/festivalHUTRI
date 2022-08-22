@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   # Defines the root path route ("/")
   # root "articles#index"
+  post 'post', to: 'posts#post'
   get 'post', to: 'posts#posts_form'
   
   get 'assets/:type', to: 'assets#mode'

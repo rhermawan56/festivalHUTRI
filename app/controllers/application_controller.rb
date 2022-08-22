@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
     def set_user
         @current_user = User.find_by(id: session[:user_id])
+        @posts = Post.all.order(created_at: :desc)
         @assets = Asset.find_by(user_id: session[:user_id])
         if @assets && @assets.cs_aset != nil
             session[:body] = @assets.cs_aset

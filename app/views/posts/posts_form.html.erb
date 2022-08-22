@@ -1,3 +1,17 @@
-<div class="container">
-    <h1 class="pt-3">Post - Index</h1>
+<div class="container m-0 login-container">
+    <div class="form-card p-fixed w-50 p-5 me-shadow">
+        <%= form_tag("/post", {multipart:true}) do %>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input name="image" type="file" class="form-control" id="image">
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">Deskripsi</label>
+                <textarea name="content" type="text" class="form-control" id="content"><%= @posts.content %></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Post</button>
+        <% end %>
+    </div>
 </div>
