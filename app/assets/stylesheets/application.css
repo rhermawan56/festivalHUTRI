@@ -45,7 +45,7 @@
 }
 
 .dark-shadow {
-   box-shadow: 0 0.5rem 1rem rgb(199 199 199 / 15%) !important;
+   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 50%) !important;
 }
 
 .font-dark {
@@ -165,6 +165,20 @@
 .media-mobile span {
    display: block;
    transform: scaleY(0);
+}
+
+#nav-link a,
+.media-mobile a {
+   text-decoration: unset !important;
+   color: rgb(129 128 128);
+}
+
+a:hover{
+   color: blue !important;
+}
+
+.active {
+   color: black !important;
 }
 
 .mode {

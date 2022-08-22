@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
             session[:bg] = "bgr-#{@assets.cs_aset}"
         end
     end
+
+    def must_login
+        if @current_user == nil
+            flash[:notice] = "Anda harus login terlebih dahulu"
+            redirect_to("/login")
+        end
+    end
 end

@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
     def signup
+        session[:signup] = "active"
+        session[:login] = nil
+        session[:post] = nil
+        session[:home] = nil
+
         @users = User.new
     end
 
@@ -25,7 +30,10 @@ class UsersController < ApplicationController
     end
 
     def login_form
-        
+        session[:login] = "active"
+        session[:post] = nil
+        session[:home] = nil
+        session[:signup] = nil
     end
 
     def login
@@ -42,13 +50,13 @@ class UsersController < ApplicationController
 
     def logout
         session[:user_id] = nil
-        session[:body] = @assets.cs_aset
+        session[:body] = nil
         session[:container] = nil
         session[:shadow] = nil
         session[:font] = nil
         session[:inner] = nil
         session[:bg] = nil
-        flash[:notice] = nil
+        flash[:notice] = "Anda berhasil logout"
         redirect_to("/home")
     end
 end

@@ -18,22 +18,23 @@
 
   <header>
       <div class="p-relative cek">
-        <nav class="navbar bg-smoke shadow fixed-top px-3 py-0<%=session[:shadow]%>">
+        <nav class="navbar bg-smoke shadow fixed-top px-3 py-0 <%=session[:shadow]%>">
           <div class="d-flex justify-content-between w-100">
             <div class="align-self-center">
-              <a class="navbar-brand mb-0 h1">Navbar</a>
+              <span class="navbar-brand mb-0 h1">Navbar</span>
             </div>
 
             <div id="nav-link" class="d-flex no-wrap">
               <% if @current_user != nil %>
                 <span class="align-self-center h6 m-0"><%= @current_user.name %></span>
               <% end %>
-                <a href="/home" class="py-3 px-2">Home</a>
+
+                <a href="/home" class="py-3 px-2 <%= session[:home] %>">Home</a>
+                <a href="/post" class="py-3 px-2 <%= session[:post] %>">Post</a>
               <% if @current_user == nil %>
-                <a href="/login" class="py-3 px-2">Login</a>
-                <a href="/signup" class="py-3 px-2">Signup</a>
+                <a href="/login" class="py-3 px-2 <%= session[:login] %>">Login</a>
+                <a href="/signup" class="py-3 px-2 <%= session[:signup] %>">Signup</a>
               <% else %>
-                <a href="#" class="py-3 px-2">Post</a>
                 <a href="/logout" data-method="post" class="py-3 px-2">Logout</a>             
               <% end %>
             </div>
@@ -48,13 +49,13 @@
           <% if @current_user != nil %>
             <span class="align-self-center h6 m-0 px-2 pt-3"><%= @current_user.name %></span>
           <% end %>
-          <a href="/home" class="p-2">Home</a>
+          <a href="/home" class="p-2 <%= session[:home] %>">Home</a>
+          <a href="#" class="p-2 <%= session[:post] %>">Post</a>
           <% if @current_user == nil %>
-          <a href="/login" class="p-2">Login</a>
-          <a href="/signup" class="p-2">Signup</a>
+          <a href="/login" class="p-2 <%= session[:login] %>">Login</a>
+          <a href="/signup" class="p-2 <%= session[:signup] %>">Signup</a>
           <% else %>
-          <a href="#" class="p-2">Post</a>
-          <a href="/logout" class="p-2">Logout</a>
+          <a href="/logout" class="p-2 ">Logout</a>
           <% end %>
         </div>
       </div>

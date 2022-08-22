@@ -3,15 +3,17 @@ Rails.application.routes.draw do
   
   # Defines the root path route ("/")
   # root "articles#index"
+  get 'post', to: 'posts#posts_form'
+  
   get 'assets/:type', to: 'assets#mode'
 
-  post '/create', to: 'users#create'
-  get '/signup', to: 'users#signup'
+  post 'create', to: 'users#create'
+  get 'signup', to: 'users#signup'
   
-  get '/logout', to: 'users#logout'
-  post '/login', to: 'users#login'
-  get '/login', to: 'users#login_form'
+  get 'logout', to: 'users#logout'
+  post 'login', to: 'users#login'
+  get 'login', to: 'users#login_form'
   
-  get '/home', to: 'home#index'
+  get 'home', to: 'home#index'
   get '/', to: 'home#top'
 end
