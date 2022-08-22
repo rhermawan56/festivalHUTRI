@@ -1,0 +1,9 @@
+.edit-img,
+.edit-img img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.edit-img img {
+    max-width: 40%;
+}

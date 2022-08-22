@@ -50,7 +50,7 @@
             <span class="align-self-center h6 m-0 px-2 pt-3"><%= @current_user.name %></span>
           <% end %>
           <a href="/home" class="p-2 <%= session[:home] %>">Home</a>
-          <a href="#" class="p-2 <%= session[:post] %>">Post</a>
+          <a href="/post" class="p-2 <%= session[:post] %>">Post</a>
           <% if @current_user == nil %>
           <a href="/login" class="p-2 <%= session[:login] %>">Login</a>
           <a href="/signup" class="p-2 <%= session[:signup] %>">Signup</a>

@@ -67,12 +67,12 @@ a {
    left: 0;
    width: 100% !important;
    height: 100vh !important;
-   background: linear-gradient(45deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url('/m-images/indonesia.webp') !important;
+   background: linear-gradient(45deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(/m-images/indonesia.webp) !important;
    background-position: center !important;
    background-repeat: no-repeat !important;
    background-size: cover !important;
    overflow-y: scroll;
-   padding-bottom: 1.5rem;
+   padding-bottom: 4rem !important;
 }
 
 /* dark Mode ========================================================================================================== */

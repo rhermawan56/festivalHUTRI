@@ -26,6 +26,10 @@
     width: 100%;
 }
 
+.content-text {
+    margin-bottom: 17rem !important;
+}
+
 .content-img {
     max-width: 100%;
     max-height: 15rem;
@@ -34,13 +38,17 @@
 }
 
 .content-update {
-    bottom: 1rem;
-    right: 3rem;
+    bottom: 0;
+    left: 0;
 }
 
 @media (max-width: 768px) {
     .inner-contain {
         flex-wrap: wrap;
+    }
+
+    .content-text {
+        margin-bottom: 3rem !important;
     }
 }
 
