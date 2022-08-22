@@ -50,6 +50,18 @@
    background-color: whitesmoke !important;
  }
 
+ .bgr-dark {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100% !important;
+   height: 100vh !important;
+   background: linear-gradient(45deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url('/m-images/indonesia.webp') !important;
+   background-position: center !important;
+   background-repeat: no-repeat !important;
+   background-size: cover !important;
+ }
+
  /* dark Mode ========================================================================================================== */
 
  /* define stylesheet ================================================================================================== */
