@@ -1,0 +1,51 @@
+/* .users-setting {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.r-1 {
+    height: 100vh;
+    width: 20%;
+    padding-top: 3rem !important;
+    box-shadow: 1px 0 10px rgb(0 0 0 / 20%);
+}
+
+.r-1 .div {
+    width: 100%;
+}
+
+.r-1 .div span {
+    text-decoration: unset !important;
+    color: rgb(129 128 128);
+    display: block;
+    cursor: pointer;
+}
+
+.r-1 .div span:hover {
+    background-color: rgba(0, 0, 0, 0.226) !important;
+}
+
+.r-2 {
+    width: 100%;
+    overflow-y: scroll;
+} */
+
+.set-image {
+    width: 20%;
+}
+
+.set-image img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+}
+
+.set-continer .form-card {
+    transform: unset;
+    border-radius: unset;
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}

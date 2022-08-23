@@ -2,6 +2,15 @@ class UsersController < ApplicationController
     before_action :must_login, {only: [:setting]}
 
     def setting
+        @users = User.find_by(id: params[:id])
+        session[:setting] = "active"
+        session[:post] = nil
+        session[:home] = nil
+        session[:login] = nil
+        session[:signup] = nil
+    end
+
+    def profile
         
     end
 

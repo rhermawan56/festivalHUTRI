@@ -6,6 +6,7 @@ class PostsController < ApplicationController
         session[:home] = nil
         session[:login] = nil
         session[:signup] = nil
+        session[:setting] = nil
         @posts = Post.new
     end
 

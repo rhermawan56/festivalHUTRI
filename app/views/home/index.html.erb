@@ -18,14 +18,14 @@
                         <a href="#" class="p-2" hidden>Delete</a>
                     </div>
                     
-                    <%# <% if @current_user %>
-                        <%# <% if @current_user.id == post.user_id %>
+                    <% if @current_user %>
+                        <% if @current_user.id == post.user_id %>
                             <div>
                                 <a href="<%= "/post/#{post.id} "%>" class="p-2">Edit</a>
                                 <a href="<%="/post/#{post.id}/destroy"%>">Delete</a>
                             </div>
-                        <%# <% end %>
-                    <%# <% end %>
+                        <% end %>
+                    <% end %>
                 </div>
             </div>
         </div>
