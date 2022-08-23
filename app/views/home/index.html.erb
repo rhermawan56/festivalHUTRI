@@ -4,7 +4,7 @@
 
     <% @posts.each do | post | %>
         <div class="d-flex">
-            <div class="user shadow <%= session[:shadow] %>" style="background-image:url('<%="/m-images/#{post.user_id}.jpg"%>')"></div>
+            <div class="user shadow <%= session[:shadow] %>" style="background-image:url('<%="/users_images/#{post.user.user_image}"%>')"></div>
             <div class="inner-contain w-100 d-flex justify-content-between p-relative m-3 shadow <%= "#{session[:shadow]} #{session[:inner]}" %>">
                 <div class="content p-3 my-2">
                     <img src="<%= "/content_images/#{post.user_images}"%> " alt="<%= post.user_images %> " class="content-img">

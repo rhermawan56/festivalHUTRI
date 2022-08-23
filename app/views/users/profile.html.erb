@@ -21,12 +21,12 @@
 <div class="container py-4 px-5">
     <p class="pop-bold m-0 mt-3 h4">Profil Kamu</p>
     <hr>
-    <div class="set-continer cek d-flex">
-        <div class="set-image align-self-center cek">
-            <img src="/users_images/default.jpg" alt="profile" class="cek">
+    <div class="set-continer d-flex">
+        <div class="set-image align-self-center">
+            <img src="<%="/users_images/#{@users.user_image}"%>" alt="profile">
         </div>
-        <div class="form-card w-100 p-5 cek">
-            <form>
+        <div class="form-card w-100 p-5">
+            <%= form_tag("/users/#{@users.id}/update", {multipart: true}) do %>
                 <div class="mb-3">
                     <label for="image" class="form-label">Profil</label>
                     <input name="image" type="file" class="form-control" id="image">
@@ -34,21 +34,21 @@
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Nama</label>
-                    <input name="name" type="text" class="form-control" id="name">
+                    <input name="name" type="text" class="form-control" id="name" value ="<%= @users.name %>">
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input name="email" type="text" class="form-control" id="email">
+                    <input name="email" type="text" class="form-control" id="email" value ="<%= @users.email %>">
                 </div>
 
                 <div class="mb-3">
                     <label for="address" class="form-label">Alamat Domisili</label>
-                    <input name="address" type="text" class="form-control" id="address">
+                    <input name="address" type="text" class="form-control" id="address" value ="<%= @users.address %>">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
-            </form>
+            <% end %>
         </div>
     </div>
 </div>

@@ -37,7 +37,7 @@
                 <a href="/signup" class="py-3 px-2 <%= session[:signup] %>">Signup</a>
               <% else %>
                 <a href="/logout" data-method="post" class="py-3 px-2">Logout</a>
-                <a href="<%= "/users/#{@current_user.id}/setting" %>" data-method="post" class="py-3 px-2 <%= session[:setting] %>">Profile</a>
+                <a href="<%= "/users/#{@current_user.id}" %>" data-method="post" class="py-3 px-2 <%= session[:setting] %>">Profile</a>
               <% end %>
             </div>
 

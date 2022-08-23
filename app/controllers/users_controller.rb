@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-    before_action :must_login, {only: [:setting]}
+    before_action :must_login, {only: [:profile, :profile]}
+    before_action :no_action, {only: [:profile, :update]}
 
-    def setting
+    def profile
         @users = User.find_by(id: params[:id])
         session[:setting] = "active"
         session[:post] = nil
@@ -10,8 +11,27 @@ class UsersController < ApplicationController
         session[:signup] = nil
     end
 
-    def profile
-        
+    def update
+        @users = User.find_by(id: params[:id])
+        @users.name = params[:name]
+        @users.email = params[:email]
+        @users.address = params[:address]
+
+        if params[:image]
+            @users.user_image = "#{@users.id}.jpg"
+            image = params[:image]
+            File.binwrite("")
+        else
+            @users.user_image = "default.jpg"
+        end
+
+        if @users.save
+            flash[:notice] = "Berhasil mengubah profil"
+            redirect_to("/home")
+        else
+            flash[:notice] = "Gagal mengubah profil"
+            render("users/profile")
+        end
     end
 
     def signup
@@ -19,7 +39,7 @@ class UsersController < ApplicationController
         session[:login] = nil
         session[:post] = nil
         session[:home] = nil
-
+        session[:setting] = nil
         @users = User.new
     end
 
@@ -28,7 +48,8 @@ class UsersController < ApplicationController
             name: params[:name],
             email: params[:email],
             address: params[:address],
-            password: params[:password]
+            password: params[:password],
+            user_image: "default.jpg"
         )
 
         if params[:password] != params[:cekpassword]
@@ -72,5 +93,12 @@ class UsersController < ApplicationController
         session[:bg] = nil
         flash[:notice] = "Anda berhasil logout"
         redirect_to("/home")
+    end
+
+    def no_action
+        if @current_user.id != params[:id].to_i
+            flash[:notice] = "Warning: Access denied!!!"
+            redirect_to("/home")
+        end
     end
 end
