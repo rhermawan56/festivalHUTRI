@@ -30,4 +30,8 @@
     .top-inner {
         width: 80% !important;
     }
+
+    .top-inner p {
+        font-size: 1rem;
+    }
 }
