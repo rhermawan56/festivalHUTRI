@@ -3,28 +3,30 @@
     <hr>
 
     <% @posts.each do | post | %>
-        <div class="inner-contain d-flex justify-content-between p-relative my-3 shadow <%= "#{session[:shadow]} #{session[:inner]}" %>">
-            <div class="user p-absolute shadow <%= session[:shadow] %>" style="background-image:url('<%="/m-images/#{post.user_id}.jpg"%>')"></div>
-            <div class="content p-3 my-2">
-                <img src="<%= "/content_images/#{post.user_images}"%> " alt="<%= post.user_images %> " class="content-img">
-            </div>
-            <div class="content content-text p-3 my-2">
-                <p class="pop h6 mb-0"><%= post.content %></p>
-            </div>
-            <div class="content-update w-100 p-absolute d-flex justify-content-between px-3 pb-3">
-                <div>
-                    <a href="#" class="p-2" hidden>Edit</a>
-                    <a href="#" class="p-2" hidden>Delete</a>
+        <div class="d-flex">
+            <div class="user shadow <%= session[:shadow] %>" style="background-image:url('<%="/m-images/#{post.user_id}.jpg"%>')"></div>
+            <div class="inner-contain w-100 d-flex justify-content-between p-relative m-3 shadow <%= "#{session[:shadow]} #{session[:inner]}" %>">
+                <div class="content p-3 my-2">
+                    <img src="<%= "/content_images/#{post.user_images}"%> " alt="<%= post.user_images %> " class="content-img">
                 </div>
-                
-                <%# <% if @current_user %>
-                    <%# <% if @current_user.id == post.user_id %>
-                        <div>
-                            <a href="<%= "/post/#{post.id} "%>" class="p-2">Edit</a>
-                            <a href="<%="/post/#{post.id}/destroy"%>">Delete</a>
-                        </div>
+                <div class="content content-text p-3 my-2">
+                    <p class="pop h6 mb-0"><%= post.content %></p>
+                </div>
+                <div class="content-update w-100 p-absolute d-flex justify-content-between px-3 pb-3">
+                    <div>
+                        <a href="#" class="p-2" hidden>Edit</a>
+                        <a href="#" class="p-2" hidden>Delete</a>
+                    </div>
+                    
+                    <%# <% if @current_user %>
+                        <%# <% if @current_user.id == post.user_id %>
+                            <div>
+                                <a href="<%= "/post/#{post.id} "%>" class="p-2">Edit</a>
+                                <a href="<%="/post/#{post.id}/destroy"%>">Delete</a>
+                            </div>
+                        <%# <% end %>
                     <%# <% end %>
-                <%# <% end %>
+                </div>
             </div>
         </div>
     <% end %>

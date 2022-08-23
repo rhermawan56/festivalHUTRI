@@ -8,6 +8,20 @@ $('#svg').click(function () {
     $('.media-mobile span').toggleClass('to-show')
 })
 
+$('#nav-link a').click(function () {
+    const check = $('title').html()
+    const thisLink = $(this).html()
+})
+
+$('.r-1 .div span').click(function () {
+    const check = $('.r-1 .div span')
+    const checkActive = $(check).hasClass('active')
+    if (true) {
+        $(check).removeClass('active')
+        $(this).toggleClass('active')
+    }
+})
+
 $(function () {
     setTimeout(function () {
         $('.notice p').hide()

@@ -50,12 +50,13 @@ class PostsController < ApplicationController
     def update
         @posts = Post.find_by(id: params[:id])
         @posts.content = params[:content]
-    
-       if @posts.save
-            if params[:images] != ''
-                image = params[:image]
-                File.binwrite("public/content_images/#{@posts.user_images}", image.read)
-            end
+
+        if params[:image]
+            image = params[:image]
+            File.binwrite("public/content_images/#{@posts.user_images}", image.read)
+        end
+        
+        if @posts.save
             flash[:notice] = "Berhasil memperbarui"
             redirect_to("/home")
         else

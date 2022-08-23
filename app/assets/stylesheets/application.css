@@ -210,6 +210,11 @@ a:hover{
    .form-card {
       width: 80% !important;
    }
+
+   .close {
+      padding: 0.3rem  !important;
+      font-size: 1rem !important;
+   }
 }
 
 /* application style ================================================================================================== */

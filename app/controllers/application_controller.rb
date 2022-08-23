@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
     before_action :set_user
 
     def set_user
+        @title = 'Home'
         @current_user = User.find_by(id: session[:user_id])
         @posts = Post.all.order(created_at: :desc)
         @assets = Asset.find_by(user_id: session[:user_id])

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fes77</title>
+    <title><%= @title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -35,7 +35,8 @@
                 <a href="/login" class="py-3 px-2 <%= session[:login] %>">Login</a>
                 <a href="/signup" class="py-3 px-2 <%= session[:signup] %>">Signup</a>
               <% else %>
-                <a href="/logout" data-method="post" class="py-3 px-2">Logout</a>             
+                <a href="/logout" data-method="post" class="py-3 px-2">Logout</a>
+                <a href="<%= "/users/#{@current_user.id}/setting" %>" data-method="post" class="py-3 px-2 <%= session[:setting] %>">Setting</a>
               <% end %>
             </div>
 

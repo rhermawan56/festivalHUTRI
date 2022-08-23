@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+    before_action :must_login, {only: [:setting]}
+
+    def setting
+        
+    end
 
     def signup
         session[:signup] = "active"
