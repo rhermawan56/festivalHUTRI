@@ -6,3 +6,6 @@ git commit -am "->user:add column, ->user:controller:create, ->model:post update
 success
 
 git commit -am "->css: updated"
+success
+
+git commit -am "->users: update data updated"
