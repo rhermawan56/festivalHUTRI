@@ -55,6 +55,7 @@ a {
 
 .font-dark {
    color: whitesmoke;
+   text-shadow: 1px 4px 3px black;
 }
 
 .inner-dark {
@@ -72,7 +73,7 @@ a {
    background-repeat: no-repeat !important;
    background-size: cover !important;
    overflow-y: scroll;
-   padding-bottom: 4rem !important;
+   padding-bottom: 6rem !important;
 }
 
 /* dark Mode ========================================================================================================== */
@@ -123,7 +124,7 @@ a {
 }
 
 .form-card {
-   top: 50%;
+   top: calc(50% + 3rem);
    left: 50%;
    transform: translate(-50%, -50%);
    border-radius: .5rem;
@@ -202,14 +203,18 @@ a:hover{
    left: 0;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+
    #nav-link {
       display: none !important;
    }
-
+   
    #svg {
       display: block !important;
    }
+}
+
+@media (max-width: 576px) {
 
    .form-card {
       width: 80% !important;

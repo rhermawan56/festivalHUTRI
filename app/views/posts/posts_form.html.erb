@@ -1,13 +1,15 @@
-<div class="container m-0 login-container">
-    <div class="form-card p-fixed w-50 p-5 me-shadow">
+<div class="container <%= session[:bg] %> py-4 px-5">
+    <p class="h5 pop-bold title m-0 mt-3 <%=session[:font]%>">Post Dokumentas Kemerdekaan</p>
+    <hr>
+    <div class="p-fixed form-card w-50 p-4 shadow <%= session[:shadow] %>">
         <%= form_tag("/post", {multipart:true}) do %>
             <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
+                <label for="image" class="form-label <%= session[:font] %>">Image</label>
                 <input name="image" type="file" class="form-control" id="image">
             </div>
 
             <div class="mb-3">
-                <label for="content" class="form-label">Deskripsi</label>
+                <label for="content" class="form-label <%= session[:font] %>">Deskripsi</label>
                 <textarea name="content" type="text" class="form-control" id="content"><%= @posts.content %></textarea>
             </div>
 

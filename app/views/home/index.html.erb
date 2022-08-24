@@ -1,5 +1,5 @@
 <div class="container <%= session[:bg] %> py-4 px-5">
-    <h5 class="title m-0 mt-3 <%=session[:font]%>">Dokumentasi Festival HUT RI<%= session[:user_id] %></h5>
+    <p class="h5 pop-bold title m-0 mt-3 <%=session[:font]%>">Dokumentasi Festival HUT RI</p>
     <hr>
 
     <% @posts.each do | post | %>
@@ -10,7 +10,7 @@
                     <img src="<%= "/content_images/#{post.user_images}"%> " alt="<%= post.user_images %> " class="content-img">
                 </div>
                 <div class="content content-text p-3 my-2">
-                    <p class="pop h6 mb-0"><%= post.content %></p>
+                    <p class="pop h6 mb-0 px-3"><%= post.content %></p>
                 </div>
                 <div class="content-update w-100 p-absolute d-flex justify-content-between px-3 pb-3">
                     <div>
@@ -21,8 +21,8 @@
                     <% if @current_user %>
                         <% if @current_user.id == post.user_id %>
                             <div>
-                                <a href="<%= "/post/#{post.id} "%>" class="p-2">Edit</a>
-                                <a href="<%="/post/#{post.id}/destroy"%>">Delete</a>
+                                <a href="<%= "/post/#{post.id} "%>" class="p-2 pop">Edit</a>
+                                <a href="<%="/post/#{post.id}/destroy"%>" class="p-2 pop">Delete</a>
                             </div>
                         <% end %>
                     <% end %>

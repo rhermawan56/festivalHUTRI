@@ -1,21 +1,25 @@
-<div class="container m-0 login-container">
-    <div class="form-card p-fixed w-50 p-5 me-shadow">
-        <div class="edit-img pb-2 w-50">
-            <img src="<%= "/content_images/#{@posts.user_images}" %>">
+<div class="container py-4 px-5 <%= session[:bg] %>">
+    <p class="h5 pop-bold title m-0 mt-3 <%=session[:font]%>">Ubah Post</p>
+    <hr>
+    <div class="set-container d-flex">
+        <div class="set-image w-100 align-self-center">
+            <img src="<%= "/content_images/#{@posts.user_images}" %>" class="<%= session[:shadow] %>">
         </div>
+    
+        <div class="w-100 py-5 align-self-center <%= session[:font] %>">
+            <%= form_tag("/post/#{@posts.id}", {multipart:true}) do %>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input name="image" type="file" class="form-control <%= session[:shadow] %>" id="image">
+                </div>
 
-        <%= form_tag("/post/#{@posts.id}", {multipart:true}) do %>
-            <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input name="image" type="file" class="form-control" id="image">
-            </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Deskripsi</label>
+                    <textarea name="content" type="text" class="form-control <%= session[:shadow] %>" id="content"><%= @posts.content %></textarea>
+                </div>
 
-            <div class="mb-3">
-                <label for="content" class="form-label">Deskripsi</label>
-                <textarea name="content" type="text" class="form-control" id="content"><%= @posts.content %></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Update</button>
-        <% end %>
+                <button type="submit" class="btn btn-primary">Update</button>
+            <% end %>
+        </div>
     </div>
 </div>

@@ -31,21 +31,21 @@
     overflow-y: scroll;
 } */
 
-.set-image {
-    width: 20%;
-}
-
 .set-image img {
     margin-left: 50%;
     transform: translateX(-50%);
-    max-width: 100%;
+    max-width: 15rem;
+    border-radius: .5rem;
 }
 
-.set-continer .form-card {
-    transform: unset;
-    border-radius: unset;
-}
+@media (max-width: 768px) {
+    .set-container {
+        flex-wrap: wrap;
+    }
 
-@media (max-width: 768px) {}
+    .set-image img {
+        max-width: 30%;
+    }
+}
 
 @media (max-width: 576px) {}
