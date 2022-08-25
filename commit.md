@@ -9,3 +9,6 @@ git commit -am "->css: updated"
 success
 
 git commit -am "->users: update data updated"
+success
+
+git commit -am "css, js updated"

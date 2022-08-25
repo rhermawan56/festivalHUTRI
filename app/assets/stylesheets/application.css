@@ -36,6 +36,22 @@ a {
    overflow-x: hidden;
 }
 
+#nav-link a .actives {
+   height: 2px;
+   width: 100%;
+   background-color: #da181f;
+   left: 0;
+   bottom: 0;
+   animation: coba 1s ease;
+   color: #da181f;
+}
+
+@keyframes coba {
+   0% {
+      width: 0;
+   }
+}
+
 /* bootstrap hack ===================================================================================================== */
 
 
@@ -159,6 +175,10 @@ a {
    max-width: 2.5rem;
 }
 
+.hover-text {
+   color: rgb(218, 24, 31) !important;
+}
+
 /* define stylesheet ================================================================================================== */
 
 /* application style ================================================================================================== */
@@ -183,10 +203,6 @@ a {
    color: rgb(129 128 128);
 }
 
-a:hover{
-   color: blue !important;
-}
-
 .active {
    color: black !important;
 }
@@ -201,6 +217,11 @@ a:hover{
 .mode .btn-span {
    top: 0;
    left: 0;
+}
+
+.media-mobile .actives {
+   background-color: #dd1a1f;
+   color: white;
 }
 
 @media (max-width: 768px) {

@@ -3,11 +3,13 @@ class HomeController < ApplicationController
   end
 
   def index
-    session[:home] = "active"
+    session[:home] = "actives"
     session[:post] = nil
     session[:login] = nil
     session[:signup] = nil
     session[:setting] = nil
+    session[:logout] = nil
     @users = User.all
   end
+
 end

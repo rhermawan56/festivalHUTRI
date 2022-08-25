@@ -3,12 +3,14 @@ class UsersController < ApplicationController
     before_action :no_action, {only: [:profile, :update]}
 
     def profile
+        @title = 'Profile'
         @users = User.find_by(id: params[:id])
-        session[:setting] = "active"
+        session[:setting] = "actives"
         session[:post] = nil
         session[:home] = nil
         session[:login] = nil
         session[:signup] = nil
+        session[:logout] = nil
     end
 
     def update
@@ -35,11 +37,13 @@ class UsersController < ApplicationController
     end
 
     def signup
-        session[:signup] = "active"
+        @title = 'Signup'
+        session[:signup] = "actives"
         session[:login] = nil
         session[:post] = nil
         session[:home] = nil
         session[:setting] = nil
+        session[:logout] = nil
         @users = User.new
     end
 
@@ -65,7 +69,8 @@ class UsersController < ApplicationController
     end
 
     def login_form
-        session[:login] = "active"
+        @title = 'Login'
+        session[:login] = "actives"
         session[:post] = nil
         session[:home] = nil
         session[:signup] = nil
@@ -91,6 +96,7 @@ class UsersController < ApplicationController
         session[:font] = nil
         session[:inner] = nil
         session[:bg] = nil
+        session[:logout] = 'actives'
         flash[:notice] = "Anda berhasil logout"
         redirect_to("/home")
     end

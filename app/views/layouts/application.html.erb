@@ -29,15 +29,30 @@
               <% if @current_user != nil %>
                 <span class="pop-bold align-self-center h6 m-0 px-2"><%= @current_user.name %></span>
               <% end %>
+                <a href="/home" class="pop py-3 px-2 p-relative Home">Home
+                  <div class="p-absolute <%= session[:home] %>"></div>
+                </a>
 
-                <a href="/home" class="pop py-3 px-2 <%= session[:home] %>">Home</a>
-                <a href="/post" class="pop py-3 px-2 <%= session[:post] %>">Post</a>
+                <a href="/post" class="pop py-3 px-2 p-relative Post">Post
+                  <div class="p-absolute <%= session[:post] %>"></div>
+                </a>
+
               <% if @current_user == nil %>
-                <a href="/login" class="pop py-3 px-2 <%= session[:login] %>">Login</a>
-                <a href="/signup" class="pop py-3 px-2 <%= session[:signup] %>">Signup</a>
+                <a href="/login" class="pop py-3 px-2 p-relative Login">Login
+                  <div class="p-absolute <%= session[:login] %>"></div>
+                </a>
+                <a href="/signup" class="pop py-3 px-2 p-relative Signup">Signup
+                  <div class="p-absolute <%= session[:signup] %>"></div>
+                </a>
+
               <% else %>
-                <a href="/logout" data-method="post" class="pop py-3 px-2">Logout</a>
-                <a href="<%= "/users/#{@current_user.id}" %>" data-method="post" class="pop py-3 px-2 <%= session[:setting] %>">Profile</a>
+                <a href="/logout" data-method="post" class="pop py-3 px-2 p-relative Logout">Logout
+                  <div class="p-absolute <%= session[:logout] %>"></div>
+                </a>
+                <a href="<%= "/users/#{@current_user.id}" %>" data-method="post" class="pop py-3 px-2 p-relative Profile">Profile
+                  <div class="p-absolute <%= session[:setting] %>"></div>
+                </a>
+
               <% end %>
             </div>
 
@@ -57,7 +72,7 @@
           <a href="/login" class="p-2 pop <%= session[:login] %>">Login</a>
           <a href="/signup" class="p-2 pop <%= session[:signup] %>">Signup</a>
           <% else %>
-          <a href="/logout" class="p-2 pop ">Logout</a>
+          <a href="/logout" class="p-2 pop">Logout</a>
           <a href="<%= "/users/#{@current_user.id}" %>" data-method="post" class="py-3 px-2 pop <%= session[:setting] %>">Profile</a>
           <% end %>
         </div>
