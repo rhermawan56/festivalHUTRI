@@ -13,3 +13,5 @@ success
 
 git commit -am "css, js updated"
 success
+
+git commit -am "controller: add about me"
